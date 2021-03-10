@@ -6,8 +6,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-autocmd FileType vim setlocal foldmethod=marker
-
 set autoread
 set hidden
 set noerrorbells
@@ -28,7 +26,7 @@ set hlsearch
 set encoding=utf-8
 set colorcolumn=120
 set cmdheight=2
-set updatetime=300
+set updatetime=100
 
 set shortmess+=c
 
@@ -48,6 +46,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'preservim/nerdcommenter'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-utils/vim-man'
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
@@ -62,6 +61,11 @@ let g:airline_theme = 'dark'
 colorscheme molokai
 
 let mapleader=" "
+
+" Git Gutter
+
+let g:gitgutter_async=0
+let g:gitgutter_max_signs=2000
 
 " COC
 
@@ -193,6 +197,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+let g:coc_global_extensions = ['coc-solargraph']
 
 " RIP Grep
 
